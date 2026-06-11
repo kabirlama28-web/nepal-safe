@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>About Us — Nepal Safe</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* About page specific */
+        .mission-section {
+            padding: 80px 24px;
+            background: var(--light);
+        }
+        .mission-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        .mission-inner img {
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            width: 100%;
+            height: 360px;
+            object-fit: cover;
+        }
+        .mission-inner h2 {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--blue);
+            margin-bottom: 16px;
+        }
+        .mission-inner p { color: var(--grey); margin-bottom: 14px; }
+ 
+        /* Values */
+        .values { padding: 80px 24px; }
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .value-item {
+            text-align: center;
+            padding: 32px 20px;
+            border-radius: var(--radius);
+            background: var(--white);
+            box-shadow: var(--shadow);
+        }
+        .value-item .icon { font-size: 2.5rem; margin-bottom: 14px; }
+        .value-item h3 {
+            font-family: var(--font-display);
+            color: var(--blue);
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        .value-item p { color: var(--grey); font-size: 0.9rem; }
+ 
+        /* Team */
+        .team { padding: 80px 24px; background: var(--light); }
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 28px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .team-card {
+            text-align: center;
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 32px 20px;
+            box-shadow: var(--shadow);
+        }
+        .team-card .avatar {
+            width: 84px;
+            height: 84px;
+            border-radius: 50%;
+            background: var(--blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin: 0 auto 14px;
+        }
+        .team-card h3 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            color: var(--blue);
+            margin-bottom: 4px;
+        }
+        .team-card .role {
+            font-size: 0.82rem;
+            color: var(--red);
+            font-weight: 600;
+            font-family: var(--font-display);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 10px;
+        }
+        .team-card p { color: var(--grey); font-size: 0.88rem; }
+ 
+        /* Timeline */
+        .timeline { padding: 80px 24px; }
+        .timeline-inner { max-width: 700px; margin: 0 auto; }
+        .timeline-item {
+            display: flex;
+            gap: 24px;
+            margin-bottom: 36px;
+        }
+        .timeline-dot {
+            flex-shrink: 0;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--red);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: 0.82rem;
+        }
+        .timeline-item h3 {
+            font-family: var(--font-display);
+            color: var(--blue);
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+        .timeline-item p { color: var(--grey); font-size: 0.93rem; }
+ 
+        .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.55s, transform 0.55s; }
+        .reveal.visible { opacity: 1; transform: none; }
+ 
+        @media (max-width: 768px) {
+            .mission-inner { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+ 
+<!-- Header -->
+<header>
+    <div class="header-inner">
+        <h1>
+            <span class="logo-icon">🏔</span>
+            Nepal Safe
+        </h1>
+        <button class="hamburger" id="hamburger-btn" aria-label="Open menu">
+            <span></span><span></span><span></span>
+        </button>
+        <nav id="main-nav">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact</a>
+            <a href="login.html" class="nav-login">Login / Sign Up</a>
+        </nav>
+    </div>
+</header>
+ 
+<main>
+    <!-- Page Hero -->
+    <div class="page-hero">
+        <p class="section-label" style="color:rgba(255,255,255,0.7);">Who We Are</p>
+        <h2>About Nepal Safe</h2>
+        <p>A government-backed digital platform dedicated to saving lives through coordinated disaster response across Nepal.</p>
+    </div>
+ 
+    <!-- Mission Section -->
+    <section class="mission-section">
+        <div class="mission-inner reveal">
+            <div>
+                <p class="section-label">Our Mission</p>
+                <h2>Built for Nepal's Most Vulnerable Moments</h2>
+                <p>Nepal sits in one of the world's most disaster-prone regions — earthquakes, floods, landslides, and avalanches affect millions of people every year. Nepal Safe was created to bridge the communication gap between citizens, first responders, and government agencies during these critical events.</p>
+                <p>We believe faster coordination means fewer lives lost. Our platform gives every Nepali — from Himalayan village to Terai plains — access to real-time disaster data, emergency contacts, and community support networks.</p>
+                <a href="login.html" class="btn btn-primary" style="margin-top:10px;">Join Nepal Safe</a>
+            </div>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Nepal_earthquake_relief_efforts.jpg/640px-Nepal_earthquake_relief_efforts.jpg" alt="Relief workers in Nepal">
+        </div>
+    </section>
+ 
+    <!-- Values -->
+    <section class="values">
+        <div class="container" style="margin-bottom:48px;">
+            <p class="section-label">Our Values</p>
+            <h2 class="section-title">What Drives Us</h2>
+        </div>
+        <div class="values-grid reveal">
+            <div class="value-item">
+                <div class="icon">⚡</div>
+                <h3>Speed</h3>
+                <p>Every second counts in disaster. Our systems are built to alert and coordinate responders within minutes of an event.</p>
+            </div>
+            <div class="value-item">
+                <div class="icon">🌐</div>
+                <h3>Inclusion</h3>
+                <p>From remote mountain villages to urban centres, Nepal Safe serves all 77 districts in Nepali and English.</p>
+            </div>
+            <div class="value-item">
+                <div class="icon">🔒</div>
+                <h3>Trust</h3>
+                <p>Verified data sources and transparent reporting ensure agencies and citizens can rely on what they see.</p>
+            </div>
+            <div class="value-item">
+                <div class="icon">🤝</div>
+                <h3>Collaboration</h3>
+                <p>We break silos between NGOs, government bodies, the military, and communities so help arrives faster.</p>
+            </div>
+        </div>
+    </section>
+ 
+    <!-- Team -->
+    <section class="team">
+        <div class="container" style="margin-bottom:48px;">
+            <p class="section-label">Our Team</p>
+            <h2 class="section-title">The People Behind Nepal Safe</h2>
+            <p class="section-sub">Disaster management professionals, engineers, and community advocates working together.</p>
+        </div>
+        <div class="team-grid reveal">
+            <div class="team-card">
+                <div class="avatar">👨‍💼</div>
+                <h3>Ramesh Thapa</h3>
+                <p class="role">Executive Director</p>
+                <p>20 years in Nepal's National Disaster Risk Reduction & Management Authority.</p>
+            </div>
+            <div class="team-card">
+                <div class="avatar">👩‍💻</div>
+                <h3>Priya Shrestha</h3>
+                <p class="role">Lead Engineer</p>
+                <p>Architected Nepal Safe's real-time alert system and GIS mapping infrastructure.</p>
+            </div>
+            <div class="team-card">
+                <div class="avatar">👨‍🔬</div>
+                <h3>Dr. Bikash Gurung</h3>
+                <p class="role">Disaster Risk Analyst</p>
+                <p>PhD in geohazards from Tribhuvan University, specialising in earthquake and landslide modelling.</p>
+            </div>
+            <div class="team-card">
+                <div class="avatar">👩‍⚕️</div>
+                <h3>Sarita Karki</h3>
+                <p class="role">Community Liaison</p>
+                <p>Leads outreach to rural communities and training programs in 12 hill and mountain districts.</p>
+            </div>
+        </div>
+    </section>
+ 
+    <!-- Timeline -->
+    <section class="timeline">
+        <div class="container" style="margin-bottom:48px;">
+            <p class="section-label">Our Journey</p>
+            <h2 class="section-title">History of Nepal Safe</h2>
+        </div>
+        <div class="timeline-inner reveal">
+            <div class="timeline-item">
+                <div class="timeline-dot">2015</div>
+                <div>
+                    <h3>Founded After Gorkha Earthquake</h3>
+                    <p>The 7.8 magnitude earthquake exposed critical coordination gaps. Nepal Safe was conceptualised by a group of disaster management experts and IT professionals in Kathmandu.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot">2017</div>
+                <div>
+                    <h3>Platform Launch — Beta</h3>
+                    <p>First version launched covering 10 high-risk districts, integrating with Nepal Police and Armed Police Force alert systems.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot">2020</div>
+                <div>
+                    <h3>National Expansion</h3>
+                    <p>Extended to all 77 districts. Partnered with Ministry of Home Affairs and NDRRMA for official endorsement.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot">2024</div>
+                <div>
+                    <h3>50,000 Users Milestone</h3>
+                    <p>Reached 50,000 registered users — volunteers, first responders, government officials, and citizens — marking Nepal Safe as the country's primary disaster coordination platform.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot">2026</div>
+                <div>
+                    <h3>AI-Powered Early Warning</h3>
+                    <p>Launched machine-learning based flood and landslide early warning system in partnership with DHM and satellite data providers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+ 
+<!-- Footer -->
+<footer>
+    <div class="footer-inner">
+        <div>
+            <h3>🏔 Nepal Safe</h3>
+            <p>A web-based platform for disaster response and coordination across Nepal's 77 districts.</p>
+        </div>
+        <div>
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div>
+            <h3>Emergency Contacts</h3>
+            <ul>
+                <li>NEOC: <a href="tel:1155">1155</a></li>
+                <li>Nepal Police: <a href="tel:100">100</a></li>
+                <li>Fire Brigade: <a href="tel:101">101</a></li>
+                <li>Ambulance: <a href="tel:102">102</a></li>
+            </ul>
+        </div>
+        <div>
+            <h3>Contact Us</h3>
+            <p>Singha Durbar, Kathmandu, Nepal</p>
+            <p style="margin-top:6px;"><a href="mailto:info@nepalsafe.gov.np">info@nepalsafe.gov.np</a></p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 Nepal Safe. Built for the people of Nepal.</p>
+    </div>
+</footer>
+ 
+<script src="script.js"></script>
+</body>
+</html>
+ 

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Nepal Safe — Disaster Response & Coordination</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* --- Home-page only styles --- */
+        .stats-bar {
+            background: var(--red);
+            color: var(--white);
+            padding: 20px 24px;
+        }
+        .stats-bar .stats-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 16px;
+            text-align: center;
+        }
+        .stat-item h3 {
+            font-family: var(--font-display);
+            font-size: 1.9rem;
+            font-weight: 800;
+        }
+        .stat-item p { font-size: 0.82rem; opacity: 0.9; text-transform: uppercase; letter-spacing: 1px; }
+
+        /* Features section */
+        .features { padding: 80px 24px; background: var(--light); }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 28px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .feature-card {
+            background: var(--white);
+            padding: 32px 26px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            border-top: 4px solid var(--red);
+            transition: transform 0.2s;
+        }
+        .feature-card:hover { transform: translateY(-4px); }
+        .feature-card .icon {
+            font-size: 2rem;
+            margin-bottom: 16px;
+        }
+        .feature-card h3 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            color: var(--blue);
+            margin-bottom: 10px;
+            font-size: 1.05rem;
+        }
+        .feature-card p { color: var(--grey); font-size: 0.93rem; }
+
+        /* Recent Disasters */
+        .recent { padding: 80px 24px; }
+        .recent .container { max-width: 1200px; margin: 0 auto; }
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+        .news-card img { width: 100%; height: 190px; object-fit: cover; }
+        .news-card .badge {
+            display: inline-block;
+            background: var(--red);
+            color: var(--white);
+            font-size: 0.72rem;
+            font-weight: 700;
+            font-family: var(--font-display);
+            padding: 3px 10px;
+            border-radius: 20px;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .news-card .date { font-size: 0.8rem; color: var(--grey); margin-bottom: 6px; }
+        .news-card h3 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            color: var(--blue);
+            margin-bottom: 8px;
+            font-size: 1rem;
+        }
+        .news-card p { color: var(--grey); font-size: 0.88rem; }
+
+        /* Emergency CTA */
+        .emergency-cta {
+            background: linear-gradient(135deg, var(--blue), #0f2540);
+            color: var(--white);
+            text-align: center;
+            padding: 80px 24px;
+        }
+        .emergency-cta h2 {
+            font-family: var(--font-display);
+            font-size: 2.1rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+        .emergency-cta p {
+            color: rgba(255,255,255,0.80);
+            margin-bottom: 30px;
+            font-size: 1rem;
+            max-width: 520px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .emergency-cta .hotline {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--red);
+            margin-bottom: 24px;
+            display: block;
+        }
+
+        /* Reveal animation */
+        .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.55s, transform 0.55s; }
+        .reveal.visible { opacity: 1; transform: none; }
+    </style>
+</head>
+<body>
+
+<!-- Alert Banner -->
+<div class="alert-banner">
+    🚨 Active Alert: Monsoon season flooding reported in Terai region. <a href="gallery.html">See updates →</a>
+</div>
+
+<!-- Header -->
+<header>
+    <div class="header-inner">
+        <h1>
+            <span class="logo-icon">🏔</span>
+            Nepal Safe
+        </h1>
+        <button class="hamburger" id="hamburger-btn" aria-label="Open menu">
+            <span></span><span></span><span></span>
+        </button>
+        <nav id="main-nav">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact</a>
+            <a href="login.html" class="nav-login">Login / Sign Up</a>
+        </nav>
+    </div>
+</header>
+
+<!-- Hero -->
+<main>
+    <section class="hero">
+        <div class="hero-content">
+            <p class="section-label">Nepal's Disaster Platform</p>
+            <h2>Coordinated Response.<br>Faster Relief. Safer Nepal.</h2>
+            <p>Nepal Safe connects citizens, rescue teams, and government agencies during natural disasters — floods, earthquakes, landslides, and more.</p>
+            <div class="hero-btns">
+                <a href="login.html" class="btn btn-primary">Join the Network</a>
+                <a href="about.html" class="btn btn-outline">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Bar -->
+    <div class="stats-bar">
+        <div class="stats-inner">
+            <div class="stat-item"><h3>3,200+</h3><p>Rescue Workers Registered</p></div>
+            <div class="stat-item"><h3>77</h3><p>Districts Covered</p></div>
+            <div class="stat-item"><h3>120+</h3><p>Disaster Events Documented</p></div>
+            <div class="stat-item"><h3>50,000+</h3><p>People Assisted</p></div>
+        </div>
+    </div>
+
+    <!-- Features -->
+    <section class="features">
+        <div style="max-width:1200px;margin:0 auto 48px;padding:0 24px;">
+            <p class="section-label">What We Do</p>
+            <h2 class="section-title">Everything You Need in a Crisis</h2>
+            <p class="section-sub">Nepal Safe brings critical tools under one roof so responders and citizens act fast when seconds matter.</p>
+        </div>
+        <div class="features-grid reveal">
+            <div class="feature-card">
+                <div class="icon">🗺️</div>
+                <h3>Live Disaster Mapping</h3>
+                <p>Real-time maps showing affected zones, shelter locations, and blocked roads across all 77 districts.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">📡</div>
+                <h3>Emergency Alerts</h3>
+                <p>Instant SMS and in-app alerts to registered volunteers and first responders when a new event is reported.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">🤝</div>
+                <h3>Volunteer Coordination</h3>
+                <p>Connect NGOs, government teams, and citizen volunteers on a shared digital platform during relief operations.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">📦</div>
+                <h3>Resource Tracking</h3>
+                <p>Track food, medical supplies, and equipment from distribution centres to affected communities.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">📷</div>
+                <h3>Disaster Documentation</h3>
+                <p>Geo-tagged photos and field reports help agencies assess damage and plan targeted aid delivery.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">📚</div>
+                <h3>Preparedness Training</h3>
+                <p>Free guides and training resources to help communities prepare before disaster strikes.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recent Disasters -->
+    <section class="recent">
+        <div class="container">
+            <p class="section-label">Recent Events</p>
+            <h2 class="section-title">Latest Disaster Reports</h2>
+            <div class="news-grid reveal">
+                <div class="card news-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/2015_Nepal_earthquake.jpg/640px-2015_Nepal_earthquake.jpg" alt="Earthquake damage in Kathmandu">
+                    <div class="card-body">
+                        <span class="badge">Earthquake</span>
+                        <p class="date">April 25, 2015 — Kathmandu Valley</p>
+                        <h3>Gorkha Earthquake — Magnitude 7.8</h3>
+                        <p>One of Nepal's worst earthquakes in 80 years, devastating districts from Gorkha to Kathmandu.</p>
+                    </div>
+                </div>
+                <div class="card news-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/2017_Nepal_floods_-_Terai.jpg/640px-2017_Nepal_floods_-_Terai.jpg" alt="Terai flood waters">
+                    <div class="card-body">
+                        <span class="badge">Flood</span>
+                        <p class="date">August 2023 — Terai Plains</p>
+                        <h3>Monsoon Flooding in Terai Region</h3>
+                        <p>Heavy monsoon rains caused widespread flooding across Bara, Parsa, and Rautahat districts.</p>
+                    </div>
+                </div>
+                <div class="card news-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Landslide_in_Nepal.jpg/640px-Landslide_in_Nepal.jpg" alt="Landslide in hilly Nepal">
+                    <div class="card-body">
+                        <span class="badge">Landslide</span>
+                        <p class="date">July 2024 — Sindhupalchok</p>
+                        <h3>Bhotekoshi Landslide & Flash Flood</h3>
+                        <p>Triggered by heavy rain, a massive landslide blocked the Arniko Highway and displaced hundreds.</p>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align:center;margin-top:36px;">
+                <a href="gallery.html" class="btn btn-blue">View Full Gallery & Articles →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emergency CTA -->
+    <section class="emergency-cta">
+        <h2>In an Emergency? Call Now.</h2>
+        <p>Nepal's National Emergency Operations Centre is available 24/7 for disaster response support.</p>
+        <span class="hotline">📞 1155</span>
+        <br>
+        <a href="login.html" class="btn btn-primary">Register as a Volunteer</a>
+    </section>
+</main>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-inner">
+        <div>
+            <h3>🏔 Nepal Safe</h3>
+            <p>A web-based platform for disaster response and coordination across Nepal's 77 districts.</p>
+        </div>
+        <div>
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div>
+            <h3>Emergency Contacts</h3>
+            <ul>
+                <li>NEOC: <a href="tel:1155">1155</a></li>
+                <li>Nepal Police: <a href="tel:100">100</a></li>
+                <li>Fire Brigade: <a href="tel:101">101</a></li>
+                <li>Ambulance: <a href="tel:102">102</a></li>
+            </ul>
+        </div>
+        <div>
+            <h3>Contact Us</h3>
+            <p>Singha Durbar, Kathmandu, Nepal</p>
+            <p style="margin-top:6px;"><a href="mailto:info@nepalsafe.gov.np">info@nepalsafe.gov.np</a></p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 Nepal Safe. Built for the people of Nepal.</p>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
